@@ -1,0 +1,32 @@
+{
+  "_key": "test",
+  "jobId": "23c52a19-a4b1-05b0-e093-4860a0b6336d",
+  "uniqueIdentifier": "1",
+  "attributes": {
+    "boolean_attr_15": {
+      "key": "boolean_attr_15",
+      "value": false,
+      "type": "BOOLEAN"
+    },
+    "string_attr_16": {
+      "key": "string_attr_16",
+      "value": "string_value 15",
+      "type": "STRING"
+    },
+    "double_attr_16": {
+      "key": "double_attr_16",
+      "value": 830.5123703551269,
+      "type": "NUMBER"
+    },
+    "id": {
+      "key": "id",
+      "value": "1",
+      "type": "STRING"
+    },
+    "int_attr_0": {
+      "key": "int_attr_0",
+      "value": 10,
+      "type": "NUMBER"
+    }
+  }
+}
