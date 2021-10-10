@@ -14,6 +14,7 @@ import java.util.List;
 public class Main {
 
     static String json;
+    static boolean insertFixture = true;
 
     static {
         try {
@@ -43,10 +44,13 @@ public class Main {
                 .serializer(arangoJack)
                 .build();
 
-        // Insert the fixture
-        final Element fixture = mapper.readValue(json, Element.class);
-        arangoDB.db("testdb").collection("element").deleteDocument(fixture.getId());
-        arangoDB.db("testdb").collection("element").insertDocument(fixture);
+        if(insertFixture) {
+            final Element fixture = mapper.readValue(json, Element.class);
+            if (arangoDB.db("testdb").collection("element").documentExists(fixture.getId())) {
+                arangoDB.db("testdb").collection("element").deleteDocument(fixture.getId());
+            }
+            arangoDB.db("testdb").collection("element").insertDocument(fixture);
+        }
 
         // Query
         final HashMap<String, Object> params = new HashMap<>();
